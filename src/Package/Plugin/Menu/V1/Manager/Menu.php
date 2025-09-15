@@ -8,13 +8,16 @@ use Ababilithub\{
     FlexWordpress\Package\Menu\V1\Contract\Menu as MenuContract, 
     FlexWordpress\Package\Menu\V1\Factory\Menu as MenuFactory,
     FlexPortfolio\Package\Plugin\Menu\V1\Concrete\Main\Menu as MainMenu,
+    FlexPortfolio\Package\Plugin\Menu\V1\Concrete\Taxonomy\Portfolio\Service\Menu as PortfolioServiceMenu,
+    FlexPortfolio\Package\Plugin\Menu\V1\Concrete\Taxonomy\Portfolio\Service\Type\Menu as PortfolioServiceTypeMenu,
+    FlexPortfolio\Package\Plugin\Menu\V1\Concrete\Taxonomy\Portfolio\Type\Menu as PortfolioTypeMenu,
+    FlexPortfolio\Package\Plugin\Menu\V1\Concrete\Taxonomy\Portfolio\Status\Menu as PortfolioStatusMenu,
     FlexPortfolio\Package\Plugin\Menu\V1\Concrete\Posttype\Portfolio\Menu as PortfolioMenu,
-    FlexPortfolio\Package\Plugin\Menu\V1\Concrete\Posttype\ImportantLink\Menu as ImportantLinkMenu,
-    FlexPortfolio\Package\Plugin\Menu\V1\Concrete\Posttype\Typography\Menu as TypographyMenu,
-    FlexPortfolio\Package\Plugin\Menu\V1\Concrete\Posttype\ColorScheme\Menu as ColorSchemeMenu,
-    FlexPortfolio\Package\Plugin\Menu\V1\Concrete\Option\Menu as OptionBoxMenu,
-    FlexPortfolio\Package\Plugin\Menu\V1\Concrete\System\Wordpress\Development\Roadmap\Menu as WordpressDevelopmentRoadmapMenu,
-    FlexPortfolio\Package\Plugin\Menu\V1\Concrete\System\Status\Menu as SystemStatusMenu, 
+    FlexPortfolio\Package\Plugin\Menu\V1\Concrete\Posttype\Consultancy\Menu as ConsultencyMenu,
+    FlexPortfolio\Package\Plugin\Menu\V1\Concrete\Posttype\RealEstate\Menu as RealEstateMenu,
+    FlexPortfolio\Package\Plugin\Menu\V1\Concrete\Posttype\PolytechnicInstitute\Menu as PolytechnicInstituteMenu,
+    FlexPortfolio\Package\Plugin\Menu\V1\Concrete\Shortcode\Portfolio\Service\Menu as PortfolioServiceShortcodeMenu,
+      
 };
 
 class  Menu extends BaseManager
@@ -29,13 +32,15 @@ class  Menu extends BaseManager
         $this->set_items(
             [
                 MainMenu::class,
+                PortfolioServiceMenu::class,
+                PortfolioServiceTypeMenu::class,
+                PortfolioTypeMenu::class,
+                PortfolioStatusMenu::class,
                 PortfolioMenu::class,
-                // ImportantLinkMenu::class,
-                ColorSchemeMenu::class,
-                // TypographyMenu::class,
-                OptionBoxMenu::class,
-                WordpressDevelopmentRoadmapMenu::class,
-                SystemStatusMenu::class,                    
+                //ConsultencyMenu::class,
+                //RealEstateMenu::class,
+                //PolytechnicInstituteMenu::class,
+                PortfolioServiceShortcodeMenu::class                    
             ]
         );
     }

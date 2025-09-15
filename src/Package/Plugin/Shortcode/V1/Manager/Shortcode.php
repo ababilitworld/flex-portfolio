@@ -7,8 +7,7 @@ use Ababilithub\{
     FlexPhp\Package\Manager\V1\Base\Manager as BaseManager,
     FlexWordpress\Package\Shortcode\V1\Factory\Shortcode as ShortcodeFactory,
     FlexWordpress\Package\Shortcode\V1\Contract\Shortcode as ShortcodeContract,
-    FlexWordpress\Package\Shortcode\V1\Concrete\System\Status\Shortcode as SystemStatusShortcode,
-    FlexPortfolio\Package\Plugin\Shortcode\V1\Concrete\System\Wordpress\Development\Roadmap\Shortcode as WordpressDevelopmentRoadmapShortcode,
+    FlexPortfolio\Package\Plugin\Shortcode\V1\Concrete\Portfolio\Service\List\Shortcode as PortfolioServiceListShortcode,
     
 };
 
@@ -22,8 +21,7 @@ class Shortcode extends BaseManager
     protected function init(): void
     {
         $this->set_items([
-            SystemStatusShortcode::class,
-            WordpressDevelopmentRoadmapShortcode::class,
+            PortfolioServiceListShortcode::class,
             // Add more shortcode classes here...
         ]);
     }

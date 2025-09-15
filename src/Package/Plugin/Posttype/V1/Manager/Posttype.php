@@ -6,9 +6,11 @@ namespace Ababilithub\FlexPortfolio\Package\Plugin\Posttype\V1\Manager;
 use Ababilithub\{
     FlexPhp\Package\Manager\V1\Base\Manager as BaseManager,
     FlexWordpress\Package\Posttype\V1\Factory\Posttype as PosttypeFactory,
-    FlexWordpress\Package\Posttype\V1\Contract\Posttype as PosttypeContract, 
-    FlexPortfolio\Package\Plugin\Posttype\V1\Concrete\CompanyInfo\Posttype as CompanyInfoPosttype,
-    FlexPortfolio\Package\Plugin\Posttype\V1\Concrete\ColorScheme\Posttype as ColorSchemePosttype,   
+    FlexWordpress\Package\Posttype\V1\Contract\Posttype as PosttypeContract,
+    FlexPortfolio\Package\Plugin\Posttype\V1\Concrete\Portfolio\Posttype as PortfolioPosttype,
+    FlexPortfolio\Package\Plugin\Posttype\V1\Concrete\Consultancy\Posttype as ConsultancyPosttype,
+    FlexPortfolio\Package\Plugin\Posttype\V1\Concrete\RealEstate\Posttype as RealEstatePosttype,
+    FlexPortfolio\Package\Plugin\Posttype\V1\Concrete\PolytechnicInstitute\Posttype as PolytechnicInstitutePosttype,     
 };
 
 class Posttype extends BaseManager
@@ -21,8 +23,10 @@ class Posttype extends BaseManager
     protected function init(): void
     {
         $this->set_items([
-            CompanyInfoPosttype::class,
-            ColorSchemePosttype::class,
+            PortfolioPosttype::class,
+            ConsultancyPosttype::class,
+            RealEstatePosttype::class,
+            PolytechnicInstitutePosttype::class,
             // Add more posttype classes here...
         ]);
     }

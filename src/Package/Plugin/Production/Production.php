@@ -6,11 +6,15 @@ namespace Ababilithub\FlexPortfolio\Package\Plugin\Production;
 use Ababilithub\{
     FlexPhp\Package\Mixin\V1\Standard\Mixin as StandardMixin,
     FlexPortfolio\Package\Plugin\Menu\V1\Manager\Menu as MenuManager,
+    FlexPortfolio\Package\Plugin\Taxonomy\V1\Manager\Taxonomy as TaxonomyManager,
     FlexPortfolio\Package\Plugin\Posttype\V1\Manager\Posttype as PosttypeManager,
     FlexPortfolio\Package\Plugin\Shortcode\V1\Manager\Shortcode as ShortcodeManager, 
     FlexPortfolio\Package\Plugin\OptionBox\V1\Manager\OptionBox as OptionBoxManager,
     FlexPortfolio\Package\Plugin\OptionBoxContent\V1\Manager\OptionBoxContent as OptionBoxContentManager,
     FlexPortfolio\Package\Plugin\Notice\V1\Manager\Notice as NoticeManager,
+    FlexPortfolio\Package\Plugin\Query\Taxonomy\V1\Manager\Query as TaxonomyQueryManager,
+    FlexPortfolio\Package\Plugin\Query\Posttype\V1\Manager\Query as PosttypeQueryManager,
+
 };
 
 if (!class_exists(__NAMESPACE__.'\Production')) 
@@ -31,9 +35,9 @@ if (!class_exists(__NAMESPACE__.'\Production'))
             });
 
 
-            // add_action('init', function () {
-            //     (new TaxonomyManager())->boot();
-            // });
+            add_action('init', function () {
+                (new TaxonomyManager())->boot();
+            });
 
             add_action('init', function () {
                 (new PosttypeManager())->boot();
@@ -49,6 +53,14 @@ if (!class_exists(__NAMESPACE__.'\Production'))
 
             add_action('init', function () {
                 (new OptionBoxContentManager())->boot();
+            });
+
+            add_action('init', function () {
+                (new TaxonomyQueryManager())->boot();
+            });
+
+            add_action('init', function () {
+                (new PosttypeQueryManager())->boot();
             });
             
             // Initialize only once on admin_menu
